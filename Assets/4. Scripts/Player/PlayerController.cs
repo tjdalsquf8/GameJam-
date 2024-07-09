@@ -90,15 +90,33 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
-
-        if (x != 0 || z != 0)
+        if(z==0 && x<0)
         {
             movement.moveSpeed = 3;
+            anim.SetBool("isWalking", false);
+            anim.SetBool("LeftWalk", true);
+        }
+
+        else if(z == 0 && x > 0)
+        {
+            movement.moveSpeed = 3;
+            anim.SetBool("isWalking", false);
+            anim.SetBool("RightWalk", true);
+        }
+
+        else if (x != 0 || z != 0)
+        {
+            movement.moveSpeed = 3;
+            anim.SetBool("LeftWalk", false);
+            anim.SetBool("RightWalk", false);
             anim.SetBool("isWalking", true);
         }
+
         else
         {
             movement.moveSpeed = 0;
+            anim.SetBool("LeftWalk", false);
+            anim.SetBool("RightWalk", false);
             anim.SetBool("isWalking", false);
         }
 
