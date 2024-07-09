@@ -23,21 +23,23 @@ public class PlayerController : MonoBehaviour
     public Camera Camera;
     public float holdDistance = 2.0f;
     RaycastHit hit;
+
+    private Animator anim;
+    public bool isWalking = false;
+
+
     private void Awake()
     {
         rotateToMouse = GetComponent<RotateToMouse>();
         movement = GetComponent<MovementCharacterController>();
-    }
-    void Start()
-    {
-
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         RotateUpdate();
         MoveUpdate();
+        
         Vector3 direction = headTransform.forward;
         if (Physics.Raycast(headTransform.position, direction, out hit, 10.0f))
         {
@@ -62,11 +64,12 @@ public class PlayerController : MonoBehaviour
         if (x != 0 || z != 0)
         {
             movement.moveSpeed = 10;
-            // anim
+            anim.SetBool("isWalking", true);
         }
         else
         {
-            movement.moveSpeed = 0;
+            movement.moveSpeed = 10;
+            anim.SetBool("iswalking", false);
         }
 
         movement.MoveTo(new Vector3(x, 0.0f, z));
