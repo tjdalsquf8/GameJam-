@@ -11,17 +11,18 @@ public class Cement : MonoBehaviour, IInteractable
     {
         Instance = GameManager.GameManager._Instance;
     }
-    public void OnInteract(GameObject hit)
+    public void OnInteract(string hitTag)
     {
-        if (hit.CompareTag("tractor"))
+        if (hitTag == "Tractor")
         {
-            Instance.cementUsingCount += 1;
+            Debug.Log(GameManager.GameManager._Instance);
+            GameManager.GameManager._Instance.cementUsingCount += 1;
             this.gameObject.SetActive(false);
-            if (Instance.cementUsingCount < 3)
+            if (Instance.cementUsingCount < 9)
             {
                 Instance.enableLoad();
             }
-            else if(Instance.cementUsingCount < 4)
+            else if(Instance.cementUsingCount > 8)
             {
                 GameManager.GameManager._Instance.SectionLoadComplete();
             }

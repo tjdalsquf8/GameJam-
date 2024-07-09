@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -22,14 +19,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject _righthand;
 
-    private GameObject gettedMaterial;
+    private GameObject gettedMaterial = null;
     //RayCast
     RaycastHit hit;
     
     //Animator
     private Animator anim;
     public bool isWalking = false;
-
+    public LayerMask raycastLayerMask;
 
     private void Awake()
     {
@@ -42,18 +39,20 @@ public class PlayerController : MonoBehaviour
     {
         RotateUpdate();
         MoveUpdate();
-        
-        Vector3 direction = headTransform.forward;
-        if (Physics.Raycast(headTransform.position, direction, out hit, 10.0f))
+        // Camera의 중앙에서 Ray 발사
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        // 광선을 시각적으로 그리기 (길이와 색상 설정)
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 0.3f); ;
+
+        if (Physics.Raycast(ray ,out hit, 10.0f, ~raycastLayerMask))
         {
             if (hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract) )
             {
-                if(_righthand.transform.childCount < 1 && gettedMaterial == null)
+                if(_righthand.transform.childCount < 3 && gettedMaterial == null)
                 {
                     gettedMaterial = hit.collider.GetComponent<Wagon>().getHavingWagon();
                     gettedMaterial.transform.parent = _righthand.transform;
-                    gettedMaterial.transform.localPosition = Vector3.one;
-
+                    gettedMaterial.transform.localPosition = Vector3.zero;
                 }
                 else
                 {
@@ -63,17 +62,20 @@ public class PlayerController : MonoBehaviour
             else if(!hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract))
             {
                 IInteractable inter = gettedMaterial?.GetComponent<IInteractable>();
-                if(inter != null)
+                if (inter != null)
                 {
-                    inter.OnInteract(hit.collider.gameObject);
+                    inter.OnInteract(hit.collider.tag);
                     // OnInteract ���� ������Ʈ�� ��� �ߴٴ� �� �߰��� ��.
-                    gettedMaterial = null;
                 }
                 else
                 {
 
                 }
             }
+        }
+        else
+        {
+
         }
     }
     private void RotateUpdate()

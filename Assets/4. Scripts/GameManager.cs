@@ -26,8 +26,7 @@ namespace GameManager
         private bool houseSection2 = false;
         private bool fieldSection = false;
 
-        private float createInterval = 3.0f;
-        private float time = 0.0f;
+   
 
         public bool LoadSection { get => loadSection; set => loadSection = value; }
         public bool HouseSection { get => houseSection; set => houseSection = value; }
@@ -58,15 +57,7 @@ namespace GameManager
         // Update is called once per frame
         void Update()
         {
-            if (time > createInterval)
-            {
-                time = 0.0f;
-                Instantiate(wagon, createPos.position, createPos.rotation);
-            }
-            else
-            {
-                time += Time.deltaTime;
-            }
+           
         }
         public void enableLoad()
         {
