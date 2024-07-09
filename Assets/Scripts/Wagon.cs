@@ -52,6 +52,10 @@ public class Wagon : MonoBehaviour
             // if meterial is getted for player, isEmpty = false;
         }
     }
+    public GameObject getHavingWagon()
+    {
+        return havingWagon;
+    }
     // load - cement
     // house - cement, steel
     // field - rice

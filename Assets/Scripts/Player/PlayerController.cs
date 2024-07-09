@@ -13,15 +13,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
 
-    public TMP_InputField inputField;
     public Transform headTransform;
     private readonly KeyCode keyCodeInteract = KeyCode.F;
 
     private RotateToMouse rotateToMouse;
     private MovementCharacterController movement;
+
+    
     //RayCast
-    public Camera Camera;
-    public float holdDistance = 2.0f;
     RaycastHit hit;
     private void Awake()
     {
@@ -44,6 +43,7 @@ public class PlayerController : MonoBehaviour
             if (hit.collider.CompareTag("Wagon"))
             {
                 // wagon에 있는 옵젝 가져오기
+               // inventory에 오브젝트 추가
             }
         }
     }

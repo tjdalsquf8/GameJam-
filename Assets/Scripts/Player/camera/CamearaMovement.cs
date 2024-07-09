@@ -42,7 +42,8 @@ public class CameraMovement : MonoBehaviour
     }
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -67,7 +68,7 @@ public class CameraMovement : MonoBehaviour
         // tps
         if (!isFPS)
         {
-            float mouseDeltaY = -(Input.GetAxis("Mouse Y")) * sensitivity * Time.deltaTime;
+            float mouseDeltaY = -(Input.GetAxis("Mouse Y")) * sensitivity * Time.deltaTime * 7;
             targetRotX += mouseDeltaY; // 목표 회전값에 마우스 입력을 더해줍니다.
 
             // 목표 회전값을 클램핑하여 유효한 각도 범위로 제한합니다.
@@ -99,7 +100,7 @@ public class CameraMovement : MonoBehaviour
         else // isFPS = =true;
         {
             realCamera.transform.localPosition = Vector3.zero;
-            float mouseDeltaY = -(Input.GetAxis("Mouse Y")) * sensitivity * Time.deltaTime;
+            float mouseDeltaY = -(Input.GetAxis("Mouse Y")) * sensitivity * Time.deltaTime * 10;
             targetRotX += mouseDeltaY; // 목표 회전값에 마우스 입력을 더해줍니다.
 
             // 목표 회전값을 클램핑하여 유효한 각도 범위로 제한합니다.
