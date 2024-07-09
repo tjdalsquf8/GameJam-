@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
+
         if (x != 0 || z != 0)
         {
             movement.moveSpeed = 3;
