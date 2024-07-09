@@ -22,7 +22,7 @@ public class Wagon : MonoBehaviour
     public Transform arrivePos; // arrive this gameobject position
 
 
-    private Stack<GameObject> havingWagon;
+    private Stack<GameObject> havingWagon = new Stack<GameObject>();
 
 
     private bool loadSection = false;
@@ -76,9 +76,7 @@ public class Wagon : MonoBehaviour
     public GameObject getHavingWagon()
     {
         if(havingWagon.Count != 0) {
-            GameObject temp = havingWagon.Pop();
-            havingWagon = null;
-            return temp;
+            return havingWagon.Pop();
         }
         {
             return null;
