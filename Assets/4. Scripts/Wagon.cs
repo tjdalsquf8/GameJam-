@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Wagon : MonoBehaviour
 {
+    public enum WagonCategory{
+        cement,
+        steel,
+        rice
+    }
+
+    public WagonCategory category;
     // ÀÚÀç
     public GameObject steel;
     public GameObject rice;
     public GameObject cement;
 
+    private GameObject carryingMater;
+
+    public Transform carryingPos;
     public Transform arrivePos; // arrive this gameobject position
 
-    private GameObject havingWagon;
+
+    private Stack<GameObject> havingWagon;
 
 
     private bool loadSection = false;
@@ -30,11 +41,21 @@ public class Wagon : MonoBehaviour
         sections.Add(cement);
         sections.Add(steel);
         sections.Add(rice);
-        havingWagon = sections[Random.Range(0, sections.Count)];
     }
     void Start()
     {
-
+        switch (category)
+        {
+            case WagonCategory.cement:
+                carryingMater = cement;
+                break;
+            case WagonCategory.steel:
+                carryingMater = steel;
+                break;
+            case WagonCategory.rice:
+                carryingMater = rice;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -47,16 +68,21 @@ public class Wagon : MonoBehaviour
         else
         {
             // movement logic
-            this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.position, 10);
+            //this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.position, 10);
             // player getted having wagon
             // if meterial is getted for player, isEmpty = false;
         }
     }
     public GameObject getHavingWagon()
     {
-        GameObject temp = havingWagon;
-        havingWagon = null;
-        return temp;
+        if(havingWagon.Count != 0) {
+            GameObject temp = havingWagon.Pop();
+            havingWagon = null;
+            return temp;
+        }
+        {
+            return null;
+        }
     }
     // load - cement
     // house - cement, steel
