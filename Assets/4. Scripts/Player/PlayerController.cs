@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private RotateToMouse rotateToMouse;
     private MovementCharacterController movement;
 
+    [SerializeField]
+    private GameObject _righthand;
+
+    private GameObject gettedMaterial;
     //RayCast
     RaycastHit hit;
     
@@ -42,10 +46,33 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = headTransform.forward;
         if (Physics.Raycast(headTransform.position, direction, out hit, 10.0f))
         {
-            if (hit.collider.CompareTag("Wagon"))
+            if (hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract) )
             {
-                // wagon¿¡ ÀÖ´Â ¿ÉÁ§ °¡Á®¿À±â
-               // inventory¿¡ ¿ÀºêÁ§Æ® Ãß°¡
+                if(_righthand.transform.childCount < 1 && gettedMaterial == null)
+                {
+                    gettedMaterial = hit.collider.GetComponent<Wagon>().getHavingWagon();
+                    gettedMaterial.transform.parent = _righthand.transform;
+                    gettedMaterial.transform.localPosition = Vector3.one;
+
+                }
+                else
+                {
+                    // cant take object
+                }
+            }
+            else if(!hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract))
+            {
+                IInteractable inter = gettedMaterial?.GetComponent<IInteractable>();
+                if(inter != null)
+                {
+                    inter.OnInteract(hit.collider.gameObject);
+                    // OnInteract ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ß´Ù´ï¿½ ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½.
+                    gettedMaterial = null;
+                }
+                else
+                {
+
+                }
             }
         }
     }
