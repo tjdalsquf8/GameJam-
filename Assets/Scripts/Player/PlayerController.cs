@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour
     private RotateToMouse rotateToMouse;
     private MovementCharacterController movement;
 
-    
+    [SerializeField]
+    private GameObject _righthand;
+
+    private GameObject gettedMaterial;
     //RayCast
     RaycastHit hit;
 
@@ -42,10 +45,33 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = headTransform.forward;
         if (Physics.Raycast(headTransform.position, direction, out hit, 10.0f))
         {
-            if (hit.collider.CompareTag("Wagon"))
+            if (hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract) )
             {
-                // wagon에 있는 옵젝 가져오기
-               // inventory에 오브젝트 추가
+                if(_righthand.transform.childCount < 1 && gettedMaterial == null)
+                {
+                    gettedMaterial = hit.collider.GetComponent<Wagon>().getHavingWagon();
+                    gettedMaterial.transform.parent = _righthand.transform;
+                    gettedMaterial.transform.localPosition = Vector3.one;
+
+                }
+                else
+                {
+                    // cant take object
+                }
+            }
+            else if(!hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract))
+            {
+                IInteractable inter = gettedMaterial?.GetComponent<IInteractable>();
+                if(inter != null)
+                {
+                    inter.OnInteract(hit.collider.gameObject);
+                    // OnInteract 에는 오브젝트를 사용 했다는 걸 추가할 것.
+                    gettedMaterial = null;
+                }
+                else
+                {
+
+                }
             }
         }
     }

@@ -54,7 +54,9 @@ public class Wagon : MonoBehaviour
     }
     public GameObject getHavingWagon()
     {
-        return havingWagon;
+        GameObject temp = havingWagon;
+        havingWagon = null;
+        return temp;
     }
     // load - cement
     // house - cement, steel

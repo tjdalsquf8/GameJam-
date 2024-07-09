@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 
 
@@ -11,6 +12,12 @@ namespace GameManager
         public static GameManager _Instance = null;
         public GameObject wagon; // 
         public Transform createPos; // create Wagon position
+
+
+        public int cementUsingCount = 0;
+        public int houseSectionUsingCount = 0;
+        public int houseSection2UsingCount = 0;
+        public int fieldUsingCount = 0;
 
         private int playerScore = 100;
 
@@ -27,6 +34,7 @@ namespace GameManager
         public bool HouseSection2 { get => houseSection2; set => houseSection2 = value; }
         public bool FieldSection { get => fieldSection; set => fieldSection = value; }
 
+        public List<GameObject> load = new List<GameObject>();
         private void Awake()
         {
             if (_Instance == null)
@@ -60,8 +68,23 @@ namespace GameManager
                 time += Time.deltaTime;
             }
         }
+        public void enableLoad()
+        {
+            for(int i = 0; i< 9; i++)
+            {
+                if (load[i].activeSelf == false)
+                {
+                    load[i].SetActive(true);
+                    return;
+                }
+            }
+        }
 
-
+       public void SectionLoadComplete()
+        {
+            LoadSection = true;
+            // GameObject 
+        }
     }
 
 }
