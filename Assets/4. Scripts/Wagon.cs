@@ -37,6 +37,10 @@ public class Wagon : MonoBehaviour
 
     private void Awake()
     {
+        category = (WagonCategory)Random.Range(0, 3); // 3 -> value 
+    }
+    void Start()
+    {
         switch (category)
         {
             case WagonCategory.cement:
@@ -49,10 +53,7 @@ public class Wagon : MonoBehaviour
                 carryingMater = rice;
                 break;
         }
-    }
-    void Start()
-    {
-        for(int i = 0; i< Random.Range(1, 3); i++)
+        for (int i = 0; i< Random.Range(1, 3); i++) // 3 -> value change
         {
             GameObject obj = Instantiate(carryingMater, spawnPos.position, spawnPos.rotation);
             havingWagon.Push(obj);
