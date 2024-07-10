@@ -16,7 +16,7 @@ public class Steel : MonoBehaviour, IInteractable
             }
             else if (GameManager.GameManager._Instance.houseSectionUsingCount > 1)
             {
-                GameManager.GameManager._Instance.enablehouse1();
+                GameManager.GameManager._Instance.SectionHouse1Complete();
             }
             else
             {
@@ -34,7 +34,7 @@ public class Steel : MonoBehaviour, IInteractable
             }
             else if (GameManager.GameManager._Instance.houseSection2UsingCount > 1)
             {
-                GameManager.GameManager._Instance.enablehouse2();
+                GameManager.GameManager._Instance.SectionHouse2Complete();
             }
             else
             {
