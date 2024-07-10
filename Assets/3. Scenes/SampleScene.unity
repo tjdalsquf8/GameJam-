@@ -231,6 +231,37 @@ Transform:
   - {fileID: 1800233061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &69636544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 69636545}
+  m_Layer: 0
+  m_Name: 'WagonSpawnPos2 '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &69636545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69636544}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.029999733, y: 0.49844867, z: -0.866}
+  m_LocalScale: {x: 0.325, y: 0.5, z: 0.16666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1162064541}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &79251469
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.21
+      value: 15.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.y
@@ -849,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.y
@@ -883,6 +914,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4297987467374426595, guid: 3cbb5deb9a23fa0429cbc4bff08abf3a, type: 3}
   m_PrefabInstance: {fileID: 2343933372053628656}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &232159556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+  m_PrefabInstance: {fileID: 1716716033}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &245521407 stripped
 Transform:
@@ -1514,7 +1550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 572758849}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: WagonArrivePos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,7 +2106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.63
+      value: 7.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2118,7 +2154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_TagString
@@ -2126,7 +2162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2749,6 +2785,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.39991826, z: 1.8070688}
   m_Center: {x: 0, y: -0.09628782, z: -0.4035341}
+--- !u!114 &1162064543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428410117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140d6cdd316a306419a464b226808d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  railNumber: 1
 --- !u!1 &1167530382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,6 +3306,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2895478651811301939, guid: 41bf9e66c757df34b88b1940699faa87, type: 3}
   m_PrefabInstance: {fileID: 1248147242}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1257590379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+  m_PrefabInstance: {fileID: 2140842353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1257590380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257590379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140d6cdd316a306419a464b226808d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  railNumber: 0
 --- !u!1001 &1285568062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3787,6 +3854,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 304620c2a96ce1043bc12531ed0125d2, type: 3}
+--- !u!1 &1395753314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395753315}
+  m_Layer: 0
+  m_Name: WagonArrivePos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395753315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395753314}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.024999619, y: 0.08945942, z: 0.99500024}
+  m_LocalScale: {x: 0.325, y: 0.5, z: 0.16666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 996147614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1401978660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a710c3bac7f61e0438c3a8ee707d7741, type: 3}
@@ -3895,6 +3993,68 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1404280746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404280747}
+  m_Layer: 0
+  m_Name: WagonSpawnPos3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1404280747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404280746}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.030000687, y: 0.08945942, z: -1.05}
+  m_LocalScale: {x: 0.325, y: 0.5, z: 0.16666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2122482873}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1426402692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426402693}
+  m_Layer: 0
+  m_Name: WagonArrivePos3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426402693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426402692}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.030000687, y: 0.08945942, z: 0.9783335}
+  m_LocalScale: {x: 0.325, y: 0.5, z: 0.16666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2122482873}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1446106696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5575993746550901578, guid: 41bf9e66c757df34b88b1940699faa87, type: 3}
@@ -3978,10 +4138,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 572758849}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 69636545}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1162064542}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1162064543}
     - targetCorrespondingSourceObject: {fileID: -1046512791122688547, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1297470808}
@@ -4812,6 +4978,37 @@ MonoBehaviour:
   cement: {fileID: 0}
   spawnPos: {fileID: 0}
   arrivePos: {fileID: 0}
+--- !u!1 &1695425349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695425350}
+  m_Layer: 0
+  m_Name: WagonSpawnPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695425350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695425349}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.024999619, y: 0.08945942, z: -0.93}
+  m_LocalScale: {x: 0.325, y: 0.5, z: 0.16666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 996147614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1705755128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4991,8 +5188,17 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2f306ca49e5dda14e908a4b18c28386d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1426402693}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1404280747}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2122482874}
   m_SourcePrefab: {fileID: 100100000, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
 --- !u!1 &1754271522
 GameObject:
@@ -5602,6 +5808,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wagon: {fileID: 0}
+  isEmptyRail_1: 0
+  isEmptyRail_2: 0
+  isEmptyRail_3: 0
+  railSpawnPositions:
+  - {fileID: 69636545}
+  - {fileID: 1404280747}
+  - {fileID: 1695425350}
 --- !u!1 &1904653774
 GameObject:
   m_ObjectHideFlags: 0
@@ -5887,6 +6100,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
   m_PrefabInstance: {fileID: 1716716033}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122482874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232159556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140d6cdd316a306419a464b226808d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  railNumber: 2
 --- !u!1001 &2140842353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5961,8 +6187,17 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2f306ca49e5dda14e908a4b18c28386d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1395753315}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1695425350}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1257590380}
   m_SourcePrefab: {fileID: 100100000, guid: 293450f7c49a25d489d29d0e1f364b24, type: 3}
 --- !u!1001 &1281325698150862998
 PrefabInstance:

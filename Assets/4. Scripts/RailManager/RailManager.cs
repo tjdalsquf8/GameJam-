@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class RailManager : MonoBehaviour
 {
+    public static RailManager instance;
+
     public GameObject wagon;
 
     private float createInterval = 3.0f;
     private float time = 0.0f;
 
-    private bool isEmptyRail_1 = false;
-    private bool isEmptyRail_2 = false;
-    private bool isEmptyRail_3 = false;
+    public bool isEmptyRail_1 = false;
+    public bool isEmptyRail_2 = false;
+    public bool isEmptyRail_3 = false;
 
     private List<bool> isEmptyRail = new List<bool>();
-    private List<Transform> railSpawnPositions = new List<Transform>();
+    public List<Transform> railSpawnPositions = new List<Transform>();
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(instance);
+    }
     void Start()
     {
         isEmptyRail.Add(true);

@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
                 if(_righthand.transform.childCount < 3 && gettedMaterial == null)
                 {
                     gettedMaterial = hit.collider.GetComponent<Wagon>().getHavingWagon();
-                    Debug.Log(gettedMaterial);
                     gettedMaterial.GetComponent<Rigidbody>().isKinematic = true;
                     gettedMaterial.GetComponent<Collider>().enabled = false;
                     gettedMaterial.transform.parent = _righthand.transform;
@@ -61,7 +60,6 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     // cant take object
-                    Debug.Log("tlqkf");
                 }
             }
             else if(!hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract))

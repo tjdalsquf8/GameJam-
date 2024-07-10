@@ -45,7 +45,7 @@ namespace GameManager
                 Destroy(this);
 
             }
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(_Instance);
         }
 
         // Start is called before the first frame update
