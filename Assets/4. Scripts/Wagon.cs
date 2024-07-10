@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Rail;
 
 public class Wagon : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class Wagon : MonoBehaviour
 
     private int stackCount;
 
+    public delegate void OnDestroyWagon();
+
+    public event OnDestroyWagon OnObjectDestroy;
+
     private void Awake()
     {
         if (GameManager.GameManager._Instance.LoadSection)
@@ -46,9 +51,6 @@ public class Wagon : MonoBehaviour
         {
             category = WagonCategory.cement;
         }
-    }
-    void Start()
-    {
         switch (category)
         {
             case WagonCategory.cement:
@@ -68,7 +70,11 @@ public class Wagon : MonoBehaviour
         }
         stackCount = havingWagon.Count;
     }
-
+    void Start()
+    {
+       
+    }
+   
     // Update is called once per frame
     void Update()
     {
@@ -102,4 +108,9 @@ public class Wagon : MonoBehaviour
     // load - cement
     // house - cement, steel
     // field - rice
+
+    private void OnDestroy()
+    {
+        OnObjectDestroy();
+    }
 }

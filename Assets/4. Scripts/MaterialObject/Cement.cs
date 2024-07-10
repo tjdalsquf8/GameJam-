@@ -15,7 +15,7 @@ public class Cement : MonoBehaviour, IInteractable
             {
                 GameManager.GameManager._Instance.enableLoad();
             }
-            else if(GameManager.GameManager._Instance.cementUsingCount > 8)
+            else if(GameManager.GameManager._Instance.cementUsingCount >= 9)
             {
                 GameManager.GameManager._Instance.SectionLoadComplete();
             }
