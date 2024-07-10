@@ -14,7 +14,7 @@ public class Steel : MonoBehaviour, IInteractable
             {
                 GameManager.GameManager._Instance.enablehouse1();
             }
-            else if (GameManager.GameManager._Instance.houseSectionUsingCount > 1)
+            else if (GameManager.GameManager._Instance.houseSectionUsingCount > 1 && GameManager.GameManager._Instance.cementUsingToHouse1 > 2)
             {
                 GameManager.GameManager._Instance.SectionHouse1Complete();
             }
@@ -27,12 +27,13 @@ public class Steel : MonoBehaviour, IInteractable
         if (hitTag == "RWorkTable")
         {
             GameManager.GameManager._Instance.houseSection2UsingCount += 1;
+
             this.gameObject.SetActive(false);
             if (GameManager.GameManager._Instance.houseSection2UsingCount < 1)
             {
                 GameManager.GameManager._Instance.enablehouse2();
             }
-            else if (GameManager.GameManager._Instance.houseSection2UsingCount > 1)
+            else if (GameManager.GameManager._Instance.houseSection2UsingCount > 1 && GameManager.GameManager._Instance.cementUsingToHouse2 > 2)
             {
                 GameManager.GameManager._Instance.SectionHouse2Complete();
             }

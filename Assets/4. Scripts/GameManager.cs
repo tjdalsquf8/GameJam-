@@ -20,6 +20,8 @@ namespace GameManager
         public GameObject OpenFence;
         public GameObject money;
         public int cementUsingCount = 0;
+        public int cementUsingToHouse1 = 0;
+        public int cementUsingToHouse2 = 0;
         public int houseSectionUsingCount = 0;
         public int houseSection2UsingCount = 0;
         public int fieldUsingCount = 0;
@@ -134,6 +136,7 @@ namespace GameManager
         }
         public void SectionHouse1Complete()
         {
+            Debug.Log("µé¾î¿È");
             HouseSection = true;
             // GameObject 
             AfterHouse1.SetActive(true);
