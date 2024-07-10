@@ -37,7 +37,7 @@ public class Wagon : MonoBehaviour
 
     private void Awake()
     {
-        category = (WagonCategory)Random.Range(0, 3); // 3 -> value 
+        category = (WagonCategory)Random.Range(0, 1); // 3 -> value 
     }
     void Start()
     {
@@ -67,14 +67,17 @@ public class Wagon : MonoBehaviour
     {
         if (isEmpty)
         {
+            Debug.Log("if statement isEMpty");
             Destroy(this.gameObject, 3.0f);
         }
         else
         {
             // movement logic
-            this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.transform.position, Time.deltaTime * 0.01f);
+          //  this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.transform.position, Time.deltaTime * 0.01f);
+            Debug.Log(stackCount);
             if(stackCount == 0)
             {
+                Debug.Log("Empty");
                 isEmpty = true;
             }
             // player getted having wagon
@@ -83,8 +86,9 @@ public class Wagon : MonoBehaviour
     }
     public GameObject getHavingWagon()
     {
-        if(havingWagon.Count != 0) {
+        if(stackCount != 0) {
             stackCount -= 1;
+            Debug.Log(stackCount);
             return havingWagon.Pop();
         }
         {
