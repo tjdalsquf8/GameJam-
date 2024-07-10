@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Steel : MonoBehaviour
+public class Steel : MonoBehaviour, IInteractable
 {
     public void OnInteract(string hitTag)
     {
@@ -23,10 +23,6 @@ public class Steel : MonoBehaviour
                 return;
             }
         }
-        else
-        {
-            return;
-        }
 
         if (hitTag == "RWorkTable")
         {
@@ -44,10 +40,6 @@ public class Steel : MonoBehaviour
             {
                 return;
             }
-        }
-        else
-        {
-            return;
         }
     }
 

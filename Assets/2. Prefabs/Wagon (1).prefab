@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   category: 0
   steel: {fileID: 1176034138092776707, guid: 8060f1ba24a50624c8f717663b3bac50, type: 3}
-  rice: {fileID: 919132149155446097, guid: 9759414ad155bbc4c994ebca5f6b96a0, type: 3}
+  rice: {fileID: 2811280163351803669, guid: 5e61c5edfd26be543bbbad50c5197e8a, type: 3}
   cement: {fileID: 6005671090194598944, guid: 57eb0e00eeaf4b947b7e36ef90c67abe, type: 3}
   spawnPos: {fileID: 1492176480514088495}
   arrivePos: {fileID: 0}

@@ -18,7 +18,10 @@ public class Wagon : MonoBehaviour
     public GameObject steel;
     public GameObject rice;
     public GameObject cement;
+
     public Transform spawnPos;
+
+    
 
     private GameObject carryingMater;
 
@@ -36,6 +39,7 @@ public class Wagon : MonoBehaviour
 
 
     private int stackCount;
+    private int defaultCount = 3;
 
     public delegate void OnDestroyWagon();
 
@@ -63,7 +67,7 @@ public class Wagon : MonoBehaviour
                 carryingMater = rice;
                 break;
         }
-        for (int i = 0; i < Random.Range(1, 3); i++) // 3 -> value change
+        for (int i = 0; i < Random.Range(defaultCount - 2, defaultCount + 1); i++) // 1 3 
         {
             GameObject obj = Instantiate(carryingMater, spawnPos.position, spawnPos.rotation);
             havingWagon.Push(obj);
@@ -98,6 +102,7 @@ public class Wagon : MonoBehaviour
     {
         if (stackCount != 0)
         {
+            defaultCount += GameManager.GameManager._Instance.clearSectionCount;
             stackCount -= 1;
             return havingWagon.Pop();
         }

@@ -21,10 +21,11 @@ namespace GameManager
 
         private int playerScore = 100;
 
-        private bool loadSection = false;
-        private bool houseSection = false;
-        private bool houseSection2 = false;
-        private bool fieldSection = false;
+        public int clearSectionCount = 0;
+        public bool loadSection = false;
+        public bool houseSection = false;
+        public bool houseSection2 = false;
+        public bool fieldSection = false;
 
 
 
@@ -120,6 +121,7 @@ namespace GameManager
         public void SectionLoadComplete()
         {
             LoadSection = true;
+            cementUsingCount += 1;
             // GameObject 
             Afterplane.SetActive(true);
             Beforeplane.SetActive(false);
