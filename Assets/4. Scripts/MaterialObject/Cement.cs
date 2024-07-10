@@ -20,16 +20,19 @@ public class Cement : MonoBehaviour, IInteractable
                 }
             }
         }
-        else
+        else if(hitTag == "LWorkTable" )
         {
-            return;
+            GameManager.GameManager._Instance.cementUsingToHouse1 += 1;
+        }
+        else if(hitTag == "RWorkTable")
+        {
+            GameManager.GameManager._Instance.cementUsingToHouse2 += 1;
         }
     }
-
 
     // Update is called once per frame
     void Update()
     {
-       
-    }
+
+}
 }
