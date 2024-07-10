@@ -17,6 +17,7 @@ namespace GameManager
         public GameObject BeforeHouse2;
         public GameObject AfterHouse1;
         public GameObject AfterHouse2;
+        public GameObject OpenFence;
 
         public int cementUsingCount = 0;
         public int houseSectionUsingCount = 0;
@@ -72,6 +73,7 @@ namespace GameManager
             if(LoadSection&&HouseSection&&HouseSection2&&FieldSection)
             {
                 UpdateMoney(1000000);
+                OpenFence.SetActive(false);
             }
         }
         public void enableLoad()
