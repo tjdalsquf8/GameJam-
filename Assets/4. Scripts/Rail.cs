@@ -10,8 +10,10 @@ public class Rail : MonoBehaviour
         num3
     }
     public RailNumber railNumber;
+
+    public Wagon onDestroyEvent;
     // Start is called before the first frame update
-    
+
     void Start()
     {
         
@@ -22,20 +24,25 @@ public class Rail : MonoBehaviour
     {
         
     }
-    private void OnTriggerExit(Collider other)
+    void WagonOnDestroy()
+    {
+        switch (railNumber)
+        {
+            case RailNumber.num1:
+                RailManager.instance.isEmptyRail[0] = true;
+                break;
+            case RailNumber.num2:
+                RailManager.instance.isEmptyRail[1] = true; break;
+            case RailNumber.num3:
+                RailManager.instance.isEmptyRail[2] = true; break;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Wagon"))
         {
-            switch (railNumber)
-            {
-                case RailNumber.num1:
-                    RailManager.instance.isEmptyRail[0] = true;
-                    break;
-                case RailNumber.num2:
-                    RailManager.instance.isEmptyRail[1] = true; break;
-                case RailNumber.num3:
-                    RailManager.instance.isEmptyRail[2] = true; break; 
-            }   
+            onDestroyEvent = other.gameObject?.GetComponent<Wagon>();
+            onDestroyEvent.OnObjectDestroy += WagonOnDestroy;
         }
     }
 }

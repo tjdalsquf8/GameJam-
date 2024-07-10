@@ -10,8 +10,6 @@ namespace GameManager
     {
 
         public static GameManager _Instance = null;
-        public GameObject wagon; // 
-        public Transform createPos; // create Wagon position
 
         public GameObject Afterplane;
         public GameObject Beforeplane;
@@ -122,7 +120,6 @@ namespace GameManager
         public void SectionLoadComplete()
         {
             LoadSection = true;
-            Debug.Log("완완완완완완완완완완완완완완완완완완");
             // GameObject 
             Afterplane.SetActive(true);
             Beforeplane.SetActive(false);

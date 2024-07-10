@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5444154, g: 0.50701064, b: 0.5242721, a: 1}
+  m_IndirectSpecularColor: {r: 0.5444019, g: 0.50700164, b: 0.5242697, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5047,8 +5047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a381b1763e4b6a344950e770d574e651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wagon: {fileID: 526630966812032533, guid: a241693377abb53448c2062658acc715, type: 3}
-  createPos: {fileID: 0}
   Afterplane: {fileID: 680797947}
   Beforeplane: {fileID: 898413437}
   cementUsingCount: 0
@@ -7144,8 +7142,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.39991826, z: 2.665853}
-  m_Center: {x: 0, y: -0.09628782, z: 0.025856655}
+  m_Size: {x: 1, y: 0.9814824, z: 2.665853}
+  m_Center: {x: 0, y: 0.19449425, z: 0.025856575}
 --- !u!114 &1162064543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7158,7 +7156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140d6cdd316a306419a464b226808d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  railNumber: 0
+  railNumber: 1
+  onDestroyEvent: {fileID: 0}
 --- !u!1001 &1178874496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7831,6 +7830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   railNumber: 0
+  onDestroyEvent: {fileID: 0}
 --- !u!65 &1257590381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12703,9 +12703,9 @@ MonoBehaviour:
   wagon: {fileID: 526630966812032533, guid: a241693377abb53448c2062658acc715, type: 3}
   isEmptyRail: 
   railSpawnPositions:
+  - {fileID: 1695425350}
   - {fileID: 69636545}
   - {fileID: 1404280747}
-  - {fileID: 1695425350}
 --- !u!4 &1862697617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c4273d87bb9edbb449c564b3c8eec3a8, type: 3}
@@ -14017,7 +14017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140d6cdd316a306419a464b226808d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  railNumber: 0
+  railNumber: 2
+  onDestroyEvent: {fileID: 0}
 --- !u!65 &2122482875
 BoxCollider:
   m_ObjectHideFlags: 0
