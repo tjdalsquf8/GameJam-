@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace GameManager
 {
@@ -13,6 +13,8 @@ namespace GameManager
         public GameObject wagon; // 
         public Transform createPos; // create Wagon position
 
+        public GameObject Afterplane;
+        public GameObject Beforeplane;
 
         public int cementUsingCount = 0;
         public int houseSectionUsingCount = 0;
@@ -26,7 +28,7 @@ namespace GameManager
         private bool houseSection2 = false;
         private bool fieldSection = false;
 
-   
+
 
         public bool LoadSection { get => loadSection; set => loadSection = value; }
         public bool HouseSection { get => houseSection; set => houseSection = value; }
@@ -37,6 +39,9 @@ namespace GameManager
         public List<GameObject> house1 = new List<GameObject>();
         public List<GameObject> house2 = new List<GameObject>();
         public List<GameObject> field = new List<GameObject>();
+
+        //UI
+        public Text moneyText;
 
         private void Awake()
         {
@@ -61,11 +66,14 @@ namespace GameManager
         // Update is called once per frame
         void Update()
         {
-
+            if(LoadSection&&HouseSection&&HouseSection2&&FieldSection)
+            {
+                UpdateMoney(1000000);
+            }
         }
         public void enableLoad()
         {
-            for(int i = 0; i< 9; i++)
+            for (int i = 0; i < 9; i++)
             {
                 if (!load[i].activeSelf)
                 {
@@ -114,7 +122,10 @@ namespace GameManager
         public void SectionLoadComplete()
         {
             LoadSection = true;
+            Debug.Log("완완완완완완완완완완완완완완완완완완");
             // GameObject 
+            Afterplane.SetActive(true);
+            Beforeplane.SetActive(false);
         }
         public void SectionHouse1Complete()
         {
@@ -131,6 +142,14 @@ namespace GameManager
             FieldSection = true;
             // GameObject 
         }
-    }
 
+        void UpdateMoney(int amount)
+        {
+            if (moneyText != null)
+            {
+                moneyText.text = amount.ToString("No");
+                Debug.Log("Money updated to: " + amount);
+            }
+        }
+    }
 }

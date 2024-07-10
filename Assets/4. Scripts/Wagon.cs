@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Wagon : MonoBehaviour
 {
-    public enum WagonCategory{
+    public enum WagonCategory
+    {
         cement,
         steel,
         rice
@@ -37,7 +38,14 @@ public class Wagon : MonoBehaviour
 
     private void Awake()
     {
-        category = (WagonCategory)Random.Range(0, 1); // 3 -> value 
+        if (GameManager.GameManager._Instance.LoadSection)
+        {
+            category = (WagonCategory)Random.Range(0, 2);
+        }
+        else
+        {
+            category = WagonCategory.cement;
+        }
     }
     void Start()
     {
@@ -53,13 +61,12 @@ public class Wagon : MonoBehaviour
                 carryingMater = rice;
                 break;
         }
-        for (int i = 0; i< Random.Range(1, 3); i++) // 3 -> value change
+        for (int i = 0; i < Random.Range(1, 3); i++) // 3 -> value change
         {
             GameObject obj = Instantiate(carryingMater, spawnPos.position, spawnPos.rotation);
             havingWagon.Push(obj);
         }
         stackCount = havingWagon.Count;
-
     }
 
     // Update is called once per frame
@@ -67,17 +74,14 @@ public class Wagon : MonoBehaviour
     {
         if (isEmpty)
         {
-            Debug.Log("if statement isEMpty");
             Destroy(this.gameObject, 3.0f);
         }
         else
         {
             // movement logic
-          //  this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.transform.position, Time.deltaTime * 0.01f);
-            Debug.Log(stackCount);
-            if(stackCount == 0)
+            //  this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.transform.position, Time.deltaTime * 0.01f);
+            if (stackCount == 0)
             {
-                Debug.Log("Empty");
                 isEmpty = true;
             }
             // player getted having wagon
@@ -86,9 +90,9 @@ public class Wagon : MonoBehaviour
     }
     public GameObject getHavingWagon()
     {
-        if(stackCount != 0) {
+        if (stackCount != 0)
+        {
             stackCount -= 1;
-            Debug.Log(stackCount);
             return havingWagon.Pop();
         }
         {
@@ -99,4 +103,3 @@ public class Wagon : MonoBehaviour
     // house - cement, steel
     // field - rice
 }
-
