@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Wagon : MonoBehaviour
@@ -15,12 +16,11 @@ public class Wagon : MonoBehaviour
     public GameObject steel;
     public GameObject rice;
     public GameObject cement;
+    public Transform spawnPos;
 
     private GameObject carryingMater;
 
-    public Transform carryingPos;
     public Transform arrivePos; // arrive this gameobject position
-
 
     private Stack<GameObject> havingWagon = new Stack<GameObject>();
 
@@ -31,18 +31,11 @@ public class Wagon : MonoBehaviour
     private bool fieldSection = false;
 
     private bool isEmpty = false;
-    
-    
-    
 
-    private List<GameObject> sections = new List<GameObject>();
+
+    private int stackCount;
+
     private void Awake()
-    {
-        sections.Add(cement);
-        sections.Add(steel);
-        sections.Add(rice);
-    }
-    void Start()
     {
         switch (category)
         {
@@ -57,6 +50,16 @@ public class Wagon : MonoBehaviour
                 break;
         }
     }
+    void Start()
+    {
+        for(int i = 0; i< Random.Range(1, 3); i++)
+        {
+            GameObject obj = Instantiate(carryingMater, spawnPos.position, spawnPos.rotation);
+            havingWagon.Push(obj);
+        }
+        stackCount = havingWagon.Count;
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -68,7 +71,11 @@ public class Wagon : MonoBehaviour
         else
         {
             // movement logic
-            //this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.position, 10);
+            this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.transform.position, Time.deltaTime * 0.01f);
+            if(stackCount == 0)
+            {
+                isEmpty = true;
+            }
             // player getted having wagon
             // if meterial is getted for player, isEmpty = false;
         }
@@ -76,6 +83,7 @@ public class Wagon : MonoBehaviour
     public GameObject getHavingWagon()
     {
         if(havingWagon.Count != 0) {
+            stackCount -= 1;
             return havingWagon.Pop();
         }
         {

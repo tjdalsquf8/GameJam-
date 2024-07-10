@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -51,12 +52,16 @@ public class PlayerController : MonoBehaviour
                 if(_righthand.transform.childCount < 3 && gettedMaterial == null)
                 {
                     gettedMaterial = hit.collider.GetComponent<Wagon>().getHavingWagon();
+                    Debug.Log(gettedMaterial);
+                    gettedMaterial.GetComponent<Rigidbody>().isKinematic = true;
+                    gettedMaterial.GetComponent<Collider>().enabled = false;
                     gettedMaterial.transform.parent = _righthand.transform;
                     gettedMaterial.transform.localPosition = Vector3.zero;
                 }
                 else
                 {
                     // cant take object
+                    Debug.Log("tlqkf");
                 }
             }
             else if(!hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract))
@@ -65,7 +70,8 @@ public class PlayerController : MonoBehaviour
                 if (inter != null)
                 {
                     inter.OnInteract(hit.collider.tag);
-                    // OnInteract ���� ������Ʈ�� ��� �ߴٴ� �� �߰��� ��.
+                    Destroy(gettedMaterial);
+                    // gettedMaterial 삭제
                 }
                 else
                 {

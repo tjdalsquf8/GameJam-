@@ -5,24 +5,17 @@ using UnityEngine;
 
 public class Cement : MonoBehaviour, IInteractable
 {
-    GameManager.GameManager Instance;
-    
-    void Start()
-    {
-        Instance = GameManager.GameManager._Instance;
-    }
     public void OnInteract(string hitTag)
     {
         if (hitTag == "Tractor")
         {
-            Debug.Log(GameManager.GameManager._Instance);
             GameManager.GameManager._Instance.cementUsingCount += 1;
             this.gameObject.SetActive(false);
-            if (Instance.cementUsingCount < 9)
+            if (GameManager.GameManager._Instance.cementUsingCount < 9)
             {
-                Instance.enableLoad();
+                GameManager.GameManager._Instance.enableLoad();
             }
-            else if(Instance.cementUsingCount > 8)
+            else if(GameManager.GameManager._Instance.cementUsingCount > 8)
             {
                 GameManager.GameManager._Instance.SectionLoadComplete();
             }
@@ -41,6 +34,6 @@ public class Cement : MonoBehaviour, IInteractable
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }

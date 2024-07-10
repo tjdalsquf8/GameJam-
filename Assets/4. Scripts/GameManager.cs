@@ -57,13 +57,13 @@ namespace GameManager
         // Update is called once per frame
         void Update()
         {
-           
+
         }
         public void enableLoad()
         {
             for(int i = 0; i< 9; i++)
             {
-                if (load[i].activeSelf == false)
+                if (!load[i].activeSelf)
                 {
                     load[i].SetActive(true);
                     return;
