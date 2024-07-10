@@ -50,7 +50,11 @@ public class Wagon : MonoBehaviour
 
     private void Awake()
     {
-        if (GameManager.GameManager._Instance.LoadSection)
+        if(GameManager.GameManager._Instance.LoadSection && GameManager.GameManager._Instance.houseSection && GameManager.GameManager._Instance.houseSection2)
+        {
+            category = (WagonCategory)2;
+        }
+        else if (GameManager.GameManager._Instance.LoadSection)
         {
             category = (WagonCategory)Random.Range(0, 2);
         }
@@ -68,6 +72,8 @@ public class Wagon : MonoBehaviour
                 break;
             case WagonCategory.rice:
                 CarryingMater = rice;
+                break;
+            default:
                 break;
         }
         for (int i = 0; i < Random.Range(defaultCount - 3, defaultCount); i++) // 1 3 

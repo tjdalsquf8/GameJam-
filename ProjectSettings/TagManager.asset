@@ -9,6 +9,7 @@ TagManager:
   - Cement
   - LWorkTable
   - RWorkTable
+  - RiceTable
   layers:
   - Default
   - TransparentFX

@@ -10,11 +10,15 @@ public class Rice : MonoBehaviour, IInteractable
         {
             GameManager.GameManager._Instance.fieldUsingCount += 1;
             this.gameObject.SetActive(false);
-            if (GameManager.GameManager._Instance.fieldUsingCount < 3)
+            if (GameManager.GameManager._Instance.fieldUsingCount < 4)
             {
                 GameManager.GameManager._Instance.enableField();
+                if (GameManager.GameManager._Instance.fieldUsingCount > 3)
+                {
+                    GameManager.GameManager._Instance.SectionFieldComplete();
+                }
             }
-            else if (GameManager.GameManager._Instance.fieldUsingCount > 2)
+            else if (GameManager.GameManager._Instance.fieldUsingCount > 3)
             {
                 GameManager.GameManager._Instance.SectionFieldComplete();
             }

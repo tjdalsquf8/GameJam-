@@ -14,14 +14,10 @@ public class Cement : MonoBehaviour, IInteractable
             if (GameManager.GameManager._Instance.cementUsingCount < 10)
             {
                 GameManager.GameManager._Instance.enableLoad();
-            }
-            else if(GameManager.GameManager._Instance.cementUsingCount >= 9)
-            {
-                GameManager.GameManager._Instance.SectionLoadComplete();
-            }
-            else
-            {
-                return;
+                if (GameManager.GameManager._Instance.cementUsingCount >= 9)
+                {
+                    GameManager.GameManager._Instance.SectionLoadComplete();
+                }
             }
         }
         else
