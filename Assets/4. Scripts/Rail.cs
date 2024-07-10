@@ -22,20 +22,5 @@ public class Rail : MonoBehaviour
     {
         
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Wagon"))
-        {
-            switch (railNumber)
-            {
-                case RailNumber.num1:
-                    RailManager.instance.isEmptyRail[0] = true;
-                    break;
-                case RailNumber.num2:
-                    RailManager.instance.isEmptyRail[1] = true; break;
-                case RailNumber.num3:
-                    RailManager.instance.isEmptyRail[2] = true; break; 
-            }   
-        }
-    }
+    
 }
