@@ -18,7 +18,7 @@ namespace GameManager
         public GameObject AfterHouse1;
         public GameObject AfterHouse2;
         public GameObject OpenFence;
-
+        public GameObject money;
         public int cementUsingCount = 0;
         public int houseSectionUsingCount = 0;
         public int houseSection2UsingCount = 0;
@@ -156,7 +156,8 @@ namespace GameManager
         {
             if (moneyText != null)
             {
-                moneyText.text = "100,000";
+                money.SetActive(true);
+                moneyText.text = "400,000";
                 Debug.Log("Money updated to: " + amount);
             }
         }
