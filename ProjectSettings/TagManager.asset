@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wagon
-  - WorkSpace
   - Tractor
   - Cement
+  - LWorkTable
+  - RWorkTable
   layers:
   - Default
   - TransparentFX

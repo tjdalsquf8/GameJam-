@@ -34,6 +34,10 @@ namespace GameManager
         public bool FieldSection { get => fieldSection; set => fieldSection = value; }
 
         public List<GameObject> load = new List<GameObject>();
+        public List<GameObject> house1 = new List<GameObject>();
+        public List<GameObject> house2 = new List<GameObject>();
+        public List<GameObject> field = new List<GameObject>();
+
         private void Awake()
         {
             if (_Instance == null)
@@ -71,9 +75,60 @@ namespace GameManager
             }
         }
 
-       public void SectionLoadComplete()
+        public void enablehouse1()
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                if (!house1[i].activeSelf)
+                {
+                    house1[i].SetActive(true);
+                    return;
+                }
+            }
+        }
+
+        public void enablehouse2()
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                if (!house2[i].activeSelf)
+                {
+                    house2[i].SetActive(true);
+                    return;
+                }
+            }
+        }
+
+        public void enableField()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if (!field[i].activeSelf)
+                {
+                    field[i].SetActive(true);
+                    return;
+                }
+            }
+        }
+
+        public void SectionLoadComplete()
         {
             LoadSection = true;
+            // GameObject 
+        }
+        public void SectionHouse1Complete()
+        {
+            HouseSection = true;
+            // GameObject 
+        }
+        public void SectionHouse2Complete()
+        {
+            HouseSection2 = true;
+            // GameObject 
+        }
+        public void SectionFieldComplete()
+        {
+            FieldSection = true;
             // GameObject 
         }
     }
