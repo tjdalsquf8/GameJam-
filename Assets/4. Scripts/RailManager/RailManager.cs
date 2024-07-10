@@ -11,11 +11,9 @@ public class RailManager : MonoBehaviour
     private float createInterval = 3.0f;
     private float time = 0.0f;
 
-    public bool isEmptyRail_1 = false;
-    public bool isEmptyRail_2 = false;
-    public bool isEmptyRail_3 = false;
+    
 
-    private List<bool> isEmptyRail = new List<bool>();
+    public List<bool> isEmptyRail = new List<bool>();
     public List<Transform> railSpawnPositions = new List<Transform>();
     // Start is called before the first frame update
     private void Awake()
@@ -48,8 +46,7 @@ public class RailManager : MonoBehaviour
                 if (isEmptyRail[i] == true)
                 {
                     Instantiate(wagon, railSpawnPositions[i].position, railSpawnPositions[i].rotation);
-                    //StartCoroutine(SetIsEmptyTrue(i));
-                    // player가 wagon위의 gameobject를 다 가져가면 삭제됨.
+                    isEmptyRail[i] = false;
                     break;
                 }
             }
@@ -62,7 +59,6 @@ public class RailManager : MonoBehaviour
 
     IEnumerator SetIsEmptyTrue(int i)
     {
-        isEmptyRail[i] = false;
         yield return new WaitForSeconds(3.0f);
         isEmptyRail[i] = true;
     }

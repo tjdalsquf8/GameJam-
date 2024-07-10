@@ -29,12 +29,12 @@ public class Rail : MonoBehaviour
             switch (railNumber)
             {
                 case RailNumber.num1:
-                    RailManager.instance.isEmptyRail_1 = true;
+                    RailManager.instance.isEmptyRail[0] = true;
                     break;
                 case RailNumber.num2:
-                    RailManager.instance.isEmptyRail_2 = true; break;
+                    RailManager.instance.isEmptyRail[1] = true; break;
                 case RailNumber.num3:
-                    RailManager.instance.isEmptyRail_3 = true; break; 
+                    RailManager.instance.isEmptyRail[2] = true; break; 
             }   
         }
     }
