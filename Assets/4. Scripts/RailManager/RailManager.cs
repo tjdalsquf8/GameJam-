@@ -15,6 +15,7 @@ public class RailManager : MonoBehaviour
 
     public List<bool> isEmptyRail = new List<bool>();
     public List<Transform> railSpawnPositions = new List<Transform>();
+    public List<Transform> arrivePosition = new List<Transform>();
     // Start is called before the first frame update
     private void Awake()
     {
@@ -45,7 +46,8 @@ public class RailManager : MonoBehaviour
             {
                 if (isEmptyRail[i] == true)
                 {
-                    Instantiate(wagon, railSpawnPositions[i].position, railSpawnPositions[i].rotation);
+                    GameObject newWagon =  Instantiate(wagon, railSpawnPositions[i].position, railSpawnPositions[i].rotation);
+                    newWagon.GetComponent<Wagon>().ArrivePos = arrivePosition[i];
                     isEmptyRail[i] = false;
                     break;
                 }

@@ -25,7 +25,7 @@ public class Wagon : MonoBehaviour
 
     private GameObject carryingMater;
 
-    public Transform arrivePos; // arrive this gameobject position
+    private Transform arrivePos; // arrive this gameobject position
 
     private Stack<GameObject> havingWagon = new Stack<GameObject>();
 
@@ -39,7 +39,10 @@ public class Wagon : MonoBehaviour
 
 
     private int stackCount;
-    private int defaultCount = 3;
+    private int defaultCount = 4;
+
+    public GameObject CarryingMater { get => carryingMater; set => carryingMater = value; }
+    public Transform ArrivePos { get => arrivePos; set => arrivePos = value; }
 
     public delegate void OnDestroyWagon();
 
@@ -58,18 +61,18 @@ public class Wagon : MonoBehaviour
         switch (category)
         {
             case WagonCategory.cement:
-                carryingMater = cement;
+                CarryingMater = cement;
                 break;
             case WagonCategory.steel:
-                carryingMater = steel;
+                CarryingMater = steel;
                 break;
             case WagonCategory.rice:
-                carryingMater = rice;
+                CarryingMater = rice;
                 break;
         }
-        for (int i = 0; i < Random.Range(defaultCount - 2, defaultCount + 1); i++) // 1 3 
+        for (int i = 0; i < Random.Range(defaultCount - 3, defaultCount); i++) // 1 3 
         {
-            GameObject obj = Instantiate(carryingMater, spawnPos.position, spawnPos.rotation);
+            GameObject obj = Instantiate(CarryingMater, spawnPos.position, spawnPos.rotation);
             havingWagon.Push(obj);
         }
         stackCount = havingWagon.Count;
@@ -89,7 +92,7 @@ public class Wagon : MonoBehaviour
         else
         {
             // movement logic
-            //  this.transform.position =  Vector3.Slerp(this.transform.position, arrivePos.transform.position, Time.deltaTime * 0.01f);
+            this.transform.position =  Vector3.Lerp(this.transform.position, arrivePos.transform.position, Time.deltaTime* 0.8f);
             if (stackCount == 0)
             {
                 isEmpty = true;
