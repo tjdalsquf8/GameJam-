@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5444154, g: 0.50701064, b: 0.5242721, a: 1}
+  m_IndirectSpecularColor: {r: 0.5444019, g: 0.50700164, b: 0.5242697, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -548,7 +548,7 @@ Transform:
   m_GameObject: {fileID: 69636544}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029999733, y: 0.49844867, z: -0.866}
+  m_LocalPosition: {x: 0.029999733, y: 0.49844867, z: -0.8}
   m_LocalScale: {x: 0.325, y: 0.5, z: 0.16666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -791,7 +791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &152244753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -969,7 +969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &156845471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2070,7 +2070,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 351831007}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a710c3bac7f61e0438c3a8ee707d7741, type: 3}
       propertyPath: m_LocalScale.x
@@ -2485,7 +2485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &415978808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2590,7 +2590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &416130968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3873,7 +3873,7 @@ Transform:
   m_GameObject: {fileID: 572758848}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029999733, y: 0.49844867, z: 0.88333386}
+  m_LocalPosition: {x: 0.029999733, y: 0.49844867, z: 0.8}
   m_LocalScale: {x: 0.325, y: 0.5, z: 0.16666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5244,8 +5244,8 @@ MonoBehaviour:
   houseSectionUsingCount: 0
   houseSection2UsingCount: 0
   fieldUsingCount: 0
-  clearSectionCount: 3
-  loadSection: 1
+  clearSectionCount: 0
+  loadSection: 0
   houseSection: 0
   houseSection2: 0
   fieldSection: 0
@@ -7043,7 +7043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1122756400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10329,7 +10329,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 351831007}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a710c3bac7f61e0438c3a8ee707d7741, type: 3}
       propertyPath: m_LocalScale.x
@@ -10693,7 +10693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1534202282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11528,7 +11528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1633202057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12200,7 +12200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1754271523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13204,6 +13204,10 @@ MonoBehaviour:
   - {fileID: 1695425350}
   - {fileID: 69636545}
   - {fileID: 1404280747}
+  arrivePosition:
+  - {fileID: 1395753315}
+  - {fileID: 572758849}
+  - {fileID: 1426402693}
 --- !u!4 &1862697617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c4273d87bb9edbb449c564b3c8eec3a8, type: 3}
@@ -14250,7 +14254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2081942971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15197,3 +15201,5 @@ SceneRoots:
   - {fileID: 1425338436}
   - {fileID: 609989749}
   - {fileID: 1589554974}
+  - {fileID: 1505997962}
+  - {fileID: 379948374}

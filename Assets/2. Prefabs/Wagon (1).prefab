@@ -53,15 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.303
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0e132bc369bd2a40b138b031bc58164, type: 3}
       propertyPath: m_LocalRotation.w
@@ -178,7 +178,6 @@ MonoBehaviour:
   rice: {fileID: 2811280163351803669, guid: 5e61c5edfd26be543bbbad50c5197e8a, type: 3}
   cement: {fileID: 6005671090194598944, guid: 57eb0e00eeaf4b947b7e36ef90c67abe, type: 3}
   spawnPos: {fileID: 1492176480514088495}
-  arrivePos: {fileID: 0}
 --- !u!54 &3375088607491870782
 Rigidbody:
   m_ObjectHideFlags: 0
