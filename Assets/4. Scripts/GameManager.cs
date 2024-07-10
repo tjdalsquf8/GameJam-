@@ -13,6 +13,10 @@ namespace GameManager
 
         public GameObject Afterplane;
         public GameObject Beforeplane;
+        public GameObject BeforeHouse1;
+        public GameObject BeforeHouse2;
+        public GameObject AfterHouse1;
+        public GameObject AfterHouse2;
 
         public int cementUsingCount = 0;
         public int houseSectionUsingCount = 0;
@@ -130,11 +134,15 @@ namespace GameManager
         {
             HouseSection = true;
             // GameObject 
+            AfterHouse1.SetActive(true);
+            BeforeHouse1.SetActive(false);
         }
         public void SectionHouse2Complete()
         {
             HouseSection2 = true;
             // GameObject 
+            AfterHouse2.SetActive(true);
+            BeforeHouse2.SetActive(false);
         }
         public void SectionFieldComplete()
         {
