@@ -154,7 +154,7 @@ namespace GameManager
         {
             if (moneyText != null)
             {
-                moneyText.text = amount.ToString("No");
+                moneyText.text = "100,000";
                 Debug.Log("Money updated to: " + amount);
             }
         }
