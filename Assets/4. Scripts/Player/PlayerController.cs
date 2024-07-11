@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     public bool isWalking = false;
     public LayerMask raycastLayerMask;
+    public GameObject GuideImage;
 
     private void Awake()
     {
@@ -45,8 +46,17 @@ public class PlayerController : MonoBehaviour
         // 광선을 시각적으로 그리기 (길이와 색상 설정)
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 0.3f); ;
 
-        if (Physics.Raycast(ray ,out hit, 10.0f, ~raycastLayerMask))
+        if (Physics.Raycast(ray ,out hit, 3.0f, ~raycastLayerMask))
         {
+            if(hit.collider.CompareTag("Sign"))
+            {
+                if(Input.GetKeyDown(keyCodeInteract))
+                {
+                    GuideImage.SetActive(!GuideImage.activeSelf);
+                }
+
+            }
+
             if (hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract) )
             {
                 if(_righthand.transform.childCount < 3 && gettedMaterial == null)
