@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(!hit.collider.CompareTag("Wagon") && Input.GetKeyDown(keyCodeInteract))
             {
-                IInteractable inter = gettedMaterial?.GetComponent<IInteractable>();
+                IInteractable inter = gettedMaterial != null ? gettedMaterial?.GetComponent<IInteractable>() : null;
                 if (inter != null)
                 {
                     inter.OnInteract(hit.collider.tag);
